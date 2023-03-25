@@ -1,0 +1,45 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Upload image</title>
+    <style>
+        /* Estilos CSS para hacer el formulario responsive */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="fichero" class="form-control" />
+        <h1>Upload image</h1>
+        <label for="image">Select an image:</label>
+
+     
+
+        <label for="text">Titulo de la Obra</label>
+        <input type="text" name="nombre" class="form-control"/>
+        
+
+        <input type="hidden" name="id" value="@Context.User.FindFirst(ClaimTypes.NameIdentifier)"  class="form-control"/>
+
+
+       
+        <input type="submit" value="Upload image!">
+    </form>
+    <h2 style="color:red">
+        @ViewData["MENSAJE"]
+    </h2>
+
+</body>
+</html>

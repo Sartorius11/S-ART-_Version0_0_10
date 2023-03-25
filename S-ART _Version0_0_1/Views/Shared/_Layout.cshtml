@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - S_ART__Version0_0_1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/S_ART__Version0_0_1.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/css/Perfil.css" />
+    
+
+   
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+
+    
+    <meta name="theme-color" content="#7952b3">
+    <link href="~/css/cover.css" rel="stylesheet">
+
+
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+
+
+   @* He creado un controlador para cada pestaña como
+   la de home, Register , login y perfil*@
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+               
+                <a class="float-md-start mb-0 "
+                   asp-controller="Home"
+                   asp-action="Index">
+                   S-ART
+                </a>
+               
+               
+
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+
+                   
+
+                    <a class="nav-link "
+                       asp-controller="Home"
+                       asp-action="Index">
+                        HOME
+                    </a>
+                  
+                    <a class="nav-link "
+                       asp-controller="Usuarios"
+                       asp-action="Register">
+                       REGISTER
+                    </a>   
+                    <a class="nav-link "
+                       asp-controller="Usuarios"
+                       asp-action="LogIn">
+                        LOGIN
+                    </a>
+                      <a class ="nav-link"
+                        asp-controller="Gallery"
+                        asp-action="Index">
+                         MY GALLERY
+                    </a>
+                   
+                    <partial name="_MenuLogin" />
+                    @*DUDA TOCHA SOBRE COMO METER EL LOGIN  AQUI*@
+
+
+                  
+
+
+                      <a class="nav-link"
+                       asp-controller="UploadFiles"
+                       asp-action="SubirFichero">
+                        <img src="~/images/subir.png" width="40px" height="40px" />
+                      </a>
+
+                </nav>
+
+              
+            </div>
+        </header>
+
+        <main class="px-3">
+            @RenderBody()
+
+
+         
+        </main>
+
+        <footer class="mt-auto text-white-50 d-flex justify-content-around" >
+
+           @* he creado un controlador footer
+           para poder manejar todas las vistas desde ahí*@
+           <div class="footer">
+
+          
+            <a class="nav-link "
+               asp-controller="Footer"
+               asp-action="Contact">
+                Contact
+            </a>
+
+            <a class="nav-link "
+               asp-controller="Footer"
+               asp-action="HelpAndFaq">
+                Help and FAQ
+            </a>
+
+            <a class="nav-link "
+               asp-controller="Footer"
+               asp-action="Developer">
+                Developer
+            </a>
+
+            <a class="nav-link "
+               asp-controller="Footer"
+               asp-action="About">
+                About
+            </a>
+           </div>
+        </footer>
+    </div>
+
+
+  
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

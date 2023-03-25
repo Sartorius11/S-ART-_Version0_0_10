@@ -1,0 +1,25 @@
+create TABLE users (
+  idUsuario INT PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  salt VARCHAR(50) NOT NULL,
+  pass VARCHAR(100) NOT NULL,
+  pais VARCHAR(50)  NULL,
+  artista_fav VARCHAR(50) Null,
+);
+
+CREATE TABLE GALERIA (
+    id_imagen INT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    titulo_obra VARCHAR(255),
+    ruta VARCHAR(255) NOT NULL,
+    dimension_altura INT,
+    dimension_anchura INT
+);
+
+
+
+
+
+ select * from users
+DROP TABLE users

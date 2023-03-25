@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<link rel="stylesheet" href="~/css/Login.css" />
+
+
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <h2 class="active"> Sign In </h2>
+
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="~/images/login2.jpg" id="icon" alt="User Icon" height="4px" width="4px"/>
+            </div>
+
+            <!-- Login Form -->
+            <form method="post">
+                <input type="email" id="login" class="fadeIn second" name="email" placeholder="email">
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+          <h1 style="color:red">@ViewData["MENSAJE"]</h1>
+
+            @if(Model != null) {
+                <h1>Bienvenido a tu pagina, @Model.Nombre</h1>
+                <h1 style="color:red">@Model.Email</h1>
+                <img src="@Model.Imagen"  style="width:200px"/>
+            }
+           
+    </div>
+

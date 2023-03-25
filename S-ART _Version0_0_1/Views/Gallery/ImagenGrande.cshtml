@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+		main {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 10px;
+		}
+		article {
+			flex-basis: calc(33.33% - 20px);
+			margin-bottom: 20px;
+			position: relative;
+		}
+		img {
+			display: block;
+			height: auto;
+			max-width: 100%;
+		}
+		.overlay {
+			background-color: rgba(0, 0, 0, 0.5);
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			transition: opacity 0.3s ease;
+			width: 100%;
+			z-index: 1;
+		}
+		.article-image {
+			position: relative;
+			z-index: 0;
+		}
+		.article-image:hover .overlay {
+			opacity: 1;
+		}
+		.article-image:hover img {
+			opacity: 0.5;
+		}
+		.article-modal {
+			align-items: center;
+			background-color: rgba(0, 0, 0, 0.9);
+			display: none;
+			height: 100%;
+			justify-content: center;
+			left: 0;
+			position: fixed;
+			text-align: center;
+			top: 0;
+			width: 100%;
+			z-index: 2;
+		}
+		.article-modal img {
+			max-height: 90%;
+			max-width: 90%;
+		}
+	</style>
+</head>
+<body>
+	
+	<main>
+	
+			<div class="article-image">
+				<img src="~/images/e.jpg" alt="Imagen 1">
+				<div class="overlay"></div>
+</body>
