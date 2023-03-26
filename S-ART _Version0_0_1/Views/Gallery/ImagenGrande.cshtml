@@ -1,5 +1,7 @@
-﻿<!DOCTYPE html>
-<html>
+﻿
+@model Galeria
+
+
 <head>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,9 +75,12 @@
 </head>
 <body>
 	
-	<main>
 	
-			<div class="article-image">
-				<img src="~/images/e.jpg" alt="Imagen 1">
-				<div class="overlay"></div>
+		<h2>@Model.Titulo_obra</h2>
+		<div class="article-image">
+		<img src="~/images/@Model.Ruta" alt="Imagen 1">
+		</div>
+		
+	
+	
 </body>

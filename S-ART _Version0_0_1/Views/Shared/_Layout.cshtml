@@ -55,17 +55,24 @@
                        asp-controller="Usuarios"
                        asp-action="Register">
                        REGISTER
-                    </a>   
-                    <a class="nav-link "
-                       asp-controller="Usuarios"
-                       asp-action="LogIn">
-                        LOGIN
                     </a>
-                      <a class ="nav-link"
-                        asp-controller="Gallery"
-                        asp-action="Index">
-                         MY GALLERY
-                    </a>
+
+                    
+                        <a class="nav-link"
+                           asp-controller="Gallery"
+                           asp-action="ListaDeImagenes">
+                            MY GALLERY
+                        </a>
+                 
+                  
+                        <a class="nav-link"
+                           asp-controller="UploadFiles"
+                           asp-action="SubirFichero">
+                            <img src="~/images/subir.png" width="40px" height="40px" />
+                        </a>
+
+                  
+                  
                    
                     <partial name="_MenuLogin" />
                     @*DUDA TOCHA SOBRE COMO METER EL LOGIN  AQUI*@
@@ -74,11 +81,7 @@
                   
 
 
-                      <a class="nav-link"
-                       asp-controller="UploadFiles"
-                       asp-action="SubirFichero">
-                        <img src="~/images/subir.png" width="40px" height="40px" />
-                      </a>
+                    
 
                 </nav>
 

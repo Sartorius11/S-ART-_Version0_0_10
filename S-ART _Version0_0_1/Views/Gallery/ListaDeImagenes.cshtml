@@ -1,0 +1,23 @@
+﻿@model List<Galeria>
+
+<!-- Gallery -->
+<div class="row">
+
+    @foreach (Galeria ga in Model)
+    {
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+
+
+                <h2>@ga.Titulo_obra</h2>
+                <a 
+                    asp-route-id_Imagen="@ga.id_Imagen"
+                    class="nav-link"
+                           asp-controller="Gallery"
+                           asp-action="ImagenGrande">
+                    <img src="~/images/@ga.Ruta" class="w-100 shadow-1-strong rounded mb-4" alt="1" />
+                </a>
+            </div>
+    }
+
+</div>
+<!-- Gallery --> 

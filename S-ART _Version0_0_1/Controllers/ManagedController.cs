@@ -11,17 +11,26 @@ namespace S_ART__Version0_0_1.Controllers
     {
 
         private RepositoryUsuarios repo;
+        private RepositoryFormularios repos;
 
-        public ManagedController(RepositoryUsuarios repo)
+        public ManagedController(RepositoryUsuarios repo, RepositoryFormularios repos)
         {
             this.repo = repo;
+            this.repos = repos;
         }
+       
 
-        public IActionResult Login()
+
+        public IActionResult perfil()
         {
             return View();
         }
-
+        [HttpPost]
+        public async Task<IActionResult> perfil(string nombre, string correo, string artista_fav, string pais)
+        {
+            await this.repos.FomularioUsuario(nombre, correo, artista_fav, pais);
+            return View();
+        }
 
 
 
@@ -38,17 +47,13 @@ namespace S_ART__Version0_0_1.Controllers
                 identity.AddClaim(claimName);
 
                 Claim claimId = new Claim(ClaimTypes.NameIdentifier, usuario.IdUsuario.ToString());
-                identity.AddClaim(claimId);
-
-               
+                identity.AddClaim(claimId); 
 
                 ClaimsPrincipal userPrincipal =
                     new ClaimsPrincipal(identity);
 
-
                 await HttpContext.SignInAsync
                     (CookieAuthenticationDefaults.AuthenticationScheme,userPrincipal);
-
 
                 return RedirectToAction("Index", "Home");
             }
@@ -58,6 +63,15 @@ namespace S_ART__Version0_0_1.Controllers
                 return View();
             }
         }
+
+        public async Task<IActionResult>LogOut()
+        {
+            await HttpContext.SignOutAsync
+                (CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("LogIn");
+
+        }
+
 
 
     }
